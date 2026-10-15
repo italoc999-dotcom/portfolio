@@ -38,6 +38,7 @@ botaoMostrarProjetos.addEventListener('click', () => {
     if (todosAtivos) {
         projetos.forEach(projeto => {
             projeto.classList.remove('web-ativo');
+            projeto.classList.remove('python-ativo');
         });
 
         botaoMostrarProjetos.classList.remove('todos-ativos');
@@ -47,6 +48,7 @@ botaoMostrarProjetos.addEventListener('click', () => {
     } else {
         projetos.forEach(projeto => {
             projeto.classList.add('web-ativo');
+            projeto.classList.add('python-ativo');
         });
 
         botaoMostrarProjetos.classList.add('todos-ativos');

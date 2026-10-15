@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/estilos.css">
+    <link rel="stylesheet" href="./src/css/responsivo.css">
+    <title>X-Mens</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img class="logo" src="./src/imagens/logo.svg" alt="Logo X-Men">
+    </header>
+
+    <main class="selecao-de-personagens">
+        <section class="personagens">
+            <h1 class="titulo">Selecione um Personagem</h1>
+            <ul class="lista-de-personagens">
+                <li class="personagem selecionado" id="ciclope" data-name="Ciclope"
+                    data-description="Scott Summers, mais conhecido por Ciclope (Cyclops em inglês), é um personagem americano pertencente ao Universo Marvel Comics. Líder da equipe conhecida como X-Men, foi criado por Stan Lee e Jack Kirby. Sua estreia nos quadrinhos foi em Uncanny X-Men #1 (1963). Seu poder é emitir raios ópticos de energia com força de concussão, mas já foram escritos como cortantes como laser. ">
+                    <img src="./src/imagens/card-ciclope.jpg" alt="Personagem Ciclope">
+                </li>
+
+                <li class="personagem" id="jean-grey" data-name="Jean Grey"
+                    data-description="Jean Grey é uma personagem fictícia das histórias em quadrinhos publicadas pela Marvel Comics. Sua estreia nos quadrinhos foi em Uncanny X-Men #1 (1963). Ela não só é um dos membros originais que fundaram os X-Men, como também foi a primeira mulher a integrar a equipe, sendo hoje uma das personagens mais populares e poderosas dos quadrinhos.">
+                    <img src="./src/imagens/card-jean-grey.jpg" alt="Personagem Jean Grey">
+                </li>
+
+                <li class="personagem" id="lince-negra" data-name="Lince Negra"
+                    data-description="Uma mutante, Pryde possui uma habilidade faseada que lhe permite, assim como objetos ou pessoas com quem ela está em contato, tornar-se intangível.[1] Esse poder também perturba qualquer campo elétrico que ela passa, e permite que ela possa andar no ar.">
+                    <img src="./src/imagens/card-lince-negra.jpg" alt="Personagem Lince Negra">
+                </li>
+                <li class="personagem" id="tempestade" data-name="Tempestade"
+                    data-description="Tempestade[1] (Storm, no original) é uma personagem fictícia de história em quadrinhos do Universo Marvel Comics, alter-ego de Ororo Munroe, e membro dos X-Men. Sua primeira aparição foi em Giant-Size X-Men #1 (Maio de 1975).
+                A personagem foi criado pelo roteirista Len Wein e pelo desenhista Dave Cockrum. O conceito original de Cockrum para um personagem com o poder do controle do tempo era de um homem. ">
+                    <img src="./src/imagens/card-tempestade.jpg" alt="Personagem Tempestade">
+                </li>
+
+                <li class="personagem" id="vampira" data-name="Vampira"
+                    data-description="Rogue[1] (no Brasil, Vampira) é uma mutante ômega, personagem de histórias em quadrinhos da editora Marvel Comics. Vampira é integrante (e as vezes líder) de algumas equipes dos X-Men e dos Vingadores.
+                Sua primeira aparição foi em The Avengers Annual número 10 de 1981, e seu poder mutante é a habilidade de absorver a vitalidade, memórias, habilidades e poderes de outros seres vivos através do contato com a pele.">
+                    <img src="./src/imagens/card-vampira.jpg" alt="Personagem Vampira">
+                </li>
+
+                <li class="personagem" id="wolverine" data-name="Wolverine"
+                    data-description="Wolverine (nascido James Howlett[1] e conhecido como Logan ou Arma X) é um personagem fictício que aparece em quadrinhos americanos publicados pela Marvel Comics, principalmente em associação com os X-Men. Ele é um mutante que possui sentidos afiados, capacidades físicas aprimoradas, habilidade regenerativa poderosa conhecida como fator de cura e três garras ósseas retráteis ​​em cada mão.">
+                    <img src="./src/imagens/card-wolverine.jpg" alt="Personagem Wolverine">
+                </li>
+
+                <li class="personagem" id="noturno" data-name="Noturno"
+                    data-description="Noturno (Nightcrawler no original) é um personagem fictício de quadrinhos do Universo Marvel. Ele tem sido associado a ambos,X-Men e Excalibur, originalmente aparecendo nas histórias em quadrinhos publicados pela Marvel Comics. Criado pelo escritor Len Wein e pelo artista Dave Cockrum, ele estreou no Gigante-Size X-Men # 1 (Maio 1975).">
+                    <img src="./src/imagens/card-noturno.jpg" alt="Personagem Noturno">
+                </li>
+
+                <li class="personagem" id="magneto" data-name="Magneto"
+                    data-description="Magneto (Erik Magnus Lehnsherr, nascido Max Eisenhardt) é um personagem fictício do Universo Marvel, um supervilão criado e publicado pela editora Marvel Comics, sendo considerado um dos principais inimigos dos X-Men. Magneto é um mutante com enormes poderes de manipulação de campos magnéticos, além de controlar qualquer tipo de metal, incluindo o Adamantium.">
+                    <img src="./src/imagens/card-magneto.jpg" alt="Personagem Magneto">
+                </li>
+            </ul>
+        </section>
+        <section class="personagem-selecionado">
+            <img class="personagem-grande" src="./src/imagens/card-ciclope.png" alt="Personagem Selecionado">
+
+            <div class="informacoes-personagem">
+                <h2 class="nome-personagem" id="nome-personagem">Ciclope</h2>
+                <p class="descricao-personagem" id="descricao-personagem">Ele tem o poder de disparar rajadas ópticas
+                    por um acidente que aconteceu com ele quando criança, mas não consegue controlá-los.</p>
+            </div>
+        </section>
+    </main>
+    <script src="./src/js/index.js"></script>
+</body>
+
+</html>

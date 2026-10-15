@@ -1,0 +1,473 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+/* =========================================
+   VÍDEO DE FUNDO
+========================================= */
+
+#background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Camada para melhorar a leitura do texto */
+#background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.38);
+    pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 clamp(16px, 5vw, 80px);
+}
+
+/* =========================================
+   CABEÇALHO E MENU
+========================================= */
+
+header {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 24px 0;
+}
+
+header > img {
+    width: clamp(55px, 7vw, 90px);
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(12px, 2.5vw, 32px);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigator-link {
+    display: inline-block;
+    padding: 8px 4px;
+    font-size: clamp(14px, 1.2vw, 18px);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.navigator-link:hover,
+.navigator-link:focus-visible {
+    color: #ffd700;
+}
+
+.navigation-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.navigation-social svg {
+    width: clamp(20px, 2vw, 28px);
+    height: clamp(20px, 2vw, 28px);
+    flex-shrink: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navigation-social svg:hover {
+    transform: translateY(-3px);
+    opacity: 0.75;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    min-width: 0;
+    min-height: calc(100vh - 120px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(24px, 5vw, 80px);
+    padding: 30px 0 60px;
+}
+
+.main-info {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 650px;
+}
+
+.main-info > img {
+    display: block;
+    width: clamp(180px, 25vw, 320px);
+    max-width: 100%;
+    margin-bottom: 24px;
+    object-fit: contain;
+}
+
+.main-info p {
+    max-width: 650px;
+    font-size: clamp(15px, 1.3vw, 19px);
+    line-height: 1.8;
+    overflow-wrap: break-word;
+}
+
+main > img {
+    display: block;
+    flex: 0 1 48%;
+    width: 48%;
+    max-width: 600px;
+    max-height: 75vh;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.main-info > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.main-info a,
+.main-info button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.main-info a:hover,
+.main-info button:hover {
+    transform: translateY(-3px);
+}
+
+.main-info a:focus-visible,
+.main-info button:focus-visible,
+.navigator-link:focus-visible {
+    outline: 3px solid #ffd700;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   TABLETS - ATÉ 1024 PX
+========================================= */
+
+@media (max-width: 1024px) {
+    #app {
+        padding: 0 32px;
+    }
+
+    header {
+        gap: 18px;
+    }
+
+    .navigation {
+        gap: 18px;
+    }
+
+    .navigation-social {
+        gap: 10px;
+    }
+
+    main {
+        gap: 32px;
+        padding-top: 35px;
+    }
+
+    .main-info {
+        max-width: 55%;
+    }
+
+    main > img {
+        width: 45%;
+        flex-basis: 45%;
+    }
+
+    .main-info p {
+        line-height: 1.7;
+    }
+}
+
+/* =========================================
+   CELULARES E TABLETS PEQUENOS
+   ATÉ 768 PX
+========================================= */
+
+@media (max-width: 768px) {
+    #app {
+        padding: 0 22px;
+    }
+
+    header {
+        justify-content: center;
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    header > img {
+        width: 60px;
+    }
+
+    .navigation {
+        width: 100%;
+        gap: 12px 22px;
+        order: 2;
+    }
+
+    .navigator-link {
+        font-size: 15px;
+    }
+
+    .navigation-social {
+        gap: 14px;
+    }
+
+    .navigation-social svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    main {
+        min-height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 35px 0 45px;
+    }
+
+    .main-info {
+        width: 100%;
+        max-width: 600px;
+        flex: none;
+        text-align: center;
+    }
+
+    .main-info > img {
+        width: min(75%, 280px);
+        margin: 0 auto 22px;
+    }
+
+    .main-info p {
+        font-size: 16px;
+        line-height: 1.75;
+        text-align: left;
+    }
+
+    .main-info > div {
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .main-info a,
+    .main-info button {
+        min-height: 48px;
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+
+    main > img {
+        width: min(100%, 480px);
+        max-width: 100%;
+        max-height: none;
+        flex: none;
+        margin: 0 auto;
+    }
+}
+
+/* =========================================
+   CELULARES PEQUENOS
+   ATÉ 480 PX
+========================================= */
+
+@media (max-width: 480px) {
+    #app {
+        padding: 0 16px;
+    }
+
+    header {
+        gap: 16px;
+        padding: 16px 0;
+    }
+
+    header > img {
+        width: 52px;
+    }
+
+    .navigation {
+        gap: 8px 16px;
+    }
+
+    .navigator-link {
+        font-size: 14px;
+        padding: 6px 2px;
+    }
+
+    .navigation-social {
+        gap: 12px;
+    }
+
+    .navigation-social svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    main {
+        gap: 24px;
+        padding: 25px 0 35px;
+    }
+
+    .main-info > img {
+        width: min(85%, 240px);
+        margin-bottom: 18px;
+    }
+
+    .main-info p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .main-info > div {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .main-info a,
+    .main-info button {
+        width: 100%;
+        min-height: 48px;
+        padding: 13px 16px;
+        font-size: 15px;
+    }
+
+    main > img {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   CELULARES MUITO ESTREITOS
+   ATÉ 360 PX
+========================================= */
+
+@media (max-width: 360px) {
+    #app {
+        padding: 0 12px;
+    }
+
+    .navigation {
+        gap: 8px 12px;
+    }
+
+    .navigator-link {
+        font-size: 13px;
+    }
+
+    .main-info p {
+        font-size: 14px;
+    }
+
+    .navigation-social {
+        gap: 10px;
+    }
+}
+
+/* =========================================
+   ACESSIBILIDADE
+   REDUZIR MOVIMENTOS
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
